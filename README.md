@@ -1,2 +1,2 @@
-# papaya
+# Papaya
 Personal Data Space
