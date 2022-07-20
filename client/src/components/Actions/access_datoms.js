@@ -1,15 +1,5 @@
-//测试客户端接入datomSpaceServer，并使用privateKey读取core中的数据。
+//access remote datoms by using private-key.
 
-/* 步骤
-1. 使用客户端，连接datomServer.
-2. 使用privae key访问datomspace，并读取里面的core.
-*/
-
-/*
-使用方法： 
-  1）运行server端程序. datomSpaceServer.js
-  2) 在客户端，运行此程序。(需要用private key 打开 服务器端的对应的core。)
-*/
 require('dotenv').config();
 const { Client: datomsClient } = require('datomspace')
 const crypto  = require('hypercore-crypto')
