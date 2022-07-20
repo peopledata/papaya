@@ -1,7 +1,7 @@
 import { Component } from 'react';
-import { Header , Wrapper } from './components';
+import { ContentWrapper, Header , Wrapper } from './components';
 
-//import './App.css';
+import './App.css';
 
 
 class App extends Component {
@@ -14,8 +14,14 @@ class App extends Component {
       </div>
 
       <Header />
-      <Wrapper />
-    
+      <Wrapper>
+        <div className='content-wrapper'>
+          <ContentWrapper />
+        </div>
+        
+      </Wrapper>
+       
+            
     </div>  
     
   )

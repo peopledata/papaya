@@ -36,3 +36,14 @@
     transform: rotate(360deg);
   }
 }
+
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  color: var(--theme-color);
+  padding: 20px 40px;
+  height: 100%;
+  overflow: auto;
+  background-color: var(--theme-bg-color);
+}
