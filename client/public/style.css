@@ -5,13 +5,13 @@
 }
 
 :root {
-  --theme-bg-color: rgba(16 18 27 / 40%);
+  --theme-bg-color: rgba(50, 56, 83, 0.4);
   --border-color: rgba(113 119 144 / 25%);
   --theme-color: #f9fafb;
-  --inactive-color: rgb(113 119 144 / 78%);
+  --inactive-color: rgba(206, 214, 245, 0.78);
   --body-font: "Poppins", sans-serif;
   --hover-menu-bg: rgba(12 15 25 / 30%);
-  --content-title-color: #999ba5;
+  --content-title-color: #f5f5f7;
   --content-bg: rgb(146 151 179 / 13%);
   --button-inactive: rgb(249 250 251 / 55%);
   --dropdown-bg: #21242d;
@@ -45,7 +45,7 @@ html {
 
 body {
   font-family: var(--body-font);
-  background-image: url(https://4kwallpapers.com/images/wallpapers/macos-big-sur-apple-layers-fluidic-colorful-dark-wwdc-2020-5120x2880-1432.jpg);
+  background-image: url(https://github.com/peopledata/papaya/blob/4dca76dc6432bc69a41226e3a7da5cb170b4906d/client/public/background.jpeg);
   background-size: cover;
   background-position: center;
   display: flex;
