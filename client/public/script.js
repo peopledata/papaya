@@ -1,3 +1,4 @@
+//add controll on menu 
 $(function () {
     $(".menu-link").click(function () {
      $(".menu-link").removeClass("is-active");
