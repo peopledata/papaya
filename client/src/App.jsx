@@ -1,6 +1,9 @@
 import { Component } from 'react';
-import { ContentWrapper, Header , Wrapper } from './components';
+import { BrowserRouter, Router, Routes, Route, Link, Outlet } from 'react-router-dom';
+import { ContentWrapper, Header , Wrapper, Footer } from './components';
+
 import './App.css';
+
 
 
 class App extends Component {
@@ -15,6 +18,7 @@ class App extends Component {
           <ContentWrapper />
         
       </Wrapper>
+    
               
     </div>  
   

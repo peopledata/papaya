@@ -1,4 +1,4 @@
-//add controll on menu 
+//add controllers on menu 
 $(function () {
     $(".menu-link").click(function () {
      $(".menu-link").removeClass("is-active");

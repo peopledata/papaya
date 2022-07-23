@@ -7,8 +7,8 @@ export default class Header extends Component {
       <div className="header">
       <div className="menu-circle" />
       <div className="header-menu">
-        <a className="menu-link is-active" href="#">主页</a>
-        <a className="menu-link notify" href="#">消息</a>
+        <a className="menu-link " href="#">主页</a>
+        <a className="menu-link " href="#">消息</a>
         <a className="menu-link" href="#">数据市场</a>
       </div>
       <div className="search-bar">
