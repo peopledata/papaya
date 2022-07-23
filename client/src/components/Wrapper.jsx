@@ -11,7 +11,7 @@ export default class Wrapper extends Component {
             <div className="side-wrapper">
               <div className="side-title">权能工具</div>
               <div className="side-menu">
-                <a href="#">
+                <a id="quoerform" href="#" onClick="queryform()">
                   <svg viewBox="0 0 512 512">
                     <g xmlns="http://www.w3.org/2000/svg" fill="currentColor">
                       <path d="M0 0h128v128H0zm0 0M192 0h128v128H192zm0 0M384 0h128v128H384zm0 0M0 192h128v128H0zm0 0" data-original="#bfc9d1" />

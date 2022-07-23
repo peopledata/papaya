@@ -413,7 +413,7 @@ body.light-mode:before {
   padding: 20px 40px;
   height: 100%;
   overflow: auto;
-  background-color: var(--dropdown-hover);
+  background-color: var(--theme-color);
 }
 @media screen and (max-width: 510px) {
   .content-wrapper {

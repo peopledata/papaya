@@ -1,9 +1,11 @@
 import { Component } from 'react';
-import { BrowserRouter, Router, Routes, Route, Link, Outlet } from 'react-router-dom';
+import { BrowserRouter, Route, Link, Outlet } from 'react-router-dom';
 import { ContentWrapper, Header , Wrapper, Footer } from './components';
 
 import './App.css';
 
+// Routes
+import { ToolBox } from './components/ToolBox';
 
 
 class App extends Component {
@@ -14,8 +16,7 @@ class App extends Component {
     <div>
       <Header />
       <Wrapper>
-        
-          <ContentWrapper />
+        <ContentWrapper />
         
       </Wrapper>
     
