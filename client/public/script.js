@@ -1,17 +1,49 @@
-//add controllers on menu 
-$(function () {
+//jquery 
+
+import { ContentWrapper } from "../src/components";
+
+// Header
+  $(function () {
     $(".menu-link").click(function () {
      $(".menu-link").removeClass("is-active");
      $(this).addClass("is-active");
+     //alert("click me!");
     });
    });
    
+
    $(function () {
     $(".main-header-link").click(function () {
      $(".main-header-link").removeClass("is-active");
      $(this).addClass("is-active");
     });
    });
+
+   //Wrapper
+   $(function () {
+      
+    $("#dataCheck").click(function(){
+      alert("行使查阅权");
+      //todo
+    });
+
+    $("#dataPortable").click(function(){
+      alert("行使复制权");
+      //todo
+    });
+
+    $("#dataContracts").click(function(){
+      alert("数据合约管理");
+      //todo
+    });
+
+    $("#wealthDAO").click(function(){
+      alert("理财数据DAO");
+      //todo
+    });
+
+    });
+
    
    const dropdowns = document.querySelectorAll(".dropdown");
    dropdowns.forEach((dropdown) => {
@@ -66,6 +98,9 @@ $(function () {
    $(".pop-up .close").click(function () {
     $(".pop-up").removeClass("visible");
    });
+
+
+
    
    const toggleButton = document.querySelector('.dark-light');
    

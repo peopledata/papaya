@@ -5,6 +5,8 @@
 require('dotenv').config();
 //const IPFS = require('ipfs-core');
 const http = require('http');
+const api = require('./api/app');
+
 
 
 // IPFS

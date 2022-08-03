@@ -3,7 +3,7 @@ const { Client: datomsClient } = require('datomspace')
 const crypto  = require('hypercore-crypto')
 const datomSpaceServer = 'uid_datomSpaceServer'
 
-const key = ''
+const key = 'b144cb0976305e956bdfebdc2763f6b818f94a57814026daa34cbf138cecb4b2'
 
 async function append_datoms () {
   const c = new datomsClient({
