@@ -3,7 +3,8 @@ const { Client: datomsClient } = require('datomspace')
 const crypto  = require('hypercore-crypto')
 const datomSpaceServer = 'uid_datomSpaceServer'
 
-const key = 'b144cb0976305e956bdfebdc2763f6b818f94a57814026daa34cbf138cecb4b2'
+//const key = 'b144cb0976305e956bdfebdc2763f6b818f94a57814026daa34cbf138cecb4b2'
+const key ='cb7d246aa5e7fd82a35a1f75c3fad102e6046dd081d976067ca9d6ccd879a3b3'
 
 async function append_datoms () {
   const c = new datomsClient({
@@ -28,10 +29,10 @@ async function append_datoms () {
   //给contact datoms里添加 
 
 await datom.append({
-  name: 'Jeff Huang',
-  bank: 'ICBC',
-  account: '20202',
-  balance: `22222`
+  name: 'Alice Cuang',
+  bank: 'ICDD',
+  account: '2022202',
+  balance: `22221222`
 })
 
 

@@ -5,6 +5,7 @@ const { Client: datomsClient } = require('datomspace')
 const crypto  = require('hypercore-crypto')
 const datomSpaceServer = 'uid_datomSpaceServer'  //本地
 
+//const mykey = 'b144cb0976305e956bdfebdc2763f6b818f94a57814026daa34cbf138cecb4b2'
 const mykey = 'b144cb0976305e956bdfebdc2763f6b818f94a57814026daa34cbf138cecb4b2'
 async function access_datoms () {
   const c = new datomsClient({
@@ -30,7 +31,7 @@ async function access_datoms () {
 
   
  
-  //console.log('the private key is:', mycontactCore.key.toString('hex'))
+  console.log('the private key is:', datom.key.toString('hex'))
 
   console.log('the discovery key is:', crypto.discoveryKey(Buffer.from(datom.key)).toString('hex'))
 

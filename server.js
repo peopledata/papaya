@@ -25,7 +25,7 @@ const { start_datomsServer } = require('./datomsServer.js');
 
   // Init app
   //await initApp();
-  await start_datomsServer; //start a datomsServer for {name} datomspace
+  await start_datomsServer(); //start a datomsServer for {name} datomspace
   //await ipfs();
 
   //await jobs();
@@ -35,8 +35,8 @@ const { start_datomsServer } = require('./datomsServer.js');
   server.on('request', api);
 
   // Register weatherSocket
-  const weatherSocket = new Socket(server);
-  Sockets.registerSocket('weather', weatherSocket);
+  //const weatherSocket = new Socket(server);
+  //Sockets.registerSocket('weather', weatherSocket);
 
   server.listen(PORT, () => {
     logger.log(
