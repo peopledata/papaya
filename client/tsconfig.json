@@ -22,6 +22,8 @@
       "downlevelIteration": true
     },
     "include": [
-      "src"
-, "public/script.js"    ]
-  }
+      "src",
+      "public/script.js"
+    ]
+
+}
