@@ -23,7 +23,7 @@ Backend include `node` server, `datomspace` server. Node server serve the web, a
 
 ### Middleware
 1. User Auth and access control.
-2. verixyz app. 
+2. [todo]verixyz app. 
 
 
 ### Controllers

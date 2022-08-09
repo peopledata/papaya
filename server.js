@@ -13,7 +13,7 @@ const api = require('./api/app');
 //const ipfs = IPFS.create();
 
 // datomSpaceServer
-const { start_datomsServer } = require('./datomsServer.js');
+const { start_datomsServer } = require('./datomsServer');
 
 
 
