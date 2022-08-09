@@ -22,18 +22,24 @@ Backend include `node` server, `datomspace` server. Node server serve the web, a
 
 
 ### Middleware
+1. User Auth and access control.
+2. verixyz app. 
 
 
 ### Controllers
 
 
 ### Smart Contracts
+Use hardhat to develop&deploy smart contract.
 
-
-### Frontend
+### Frontend (`client`)
+Use React to implementation frontend. 
 
 
 ### Dapp
+
+
+### API
 
 
 
