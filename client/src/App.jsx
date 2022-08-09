@@ -10,7 +10,8 @@ export default function App()  {
       <div>
         <Header />
         <Wrapper />
-      
+        
+        
         <Outlet />
               
       </div>  

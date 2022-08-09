@@ -23,11 +23,15 @@ Backend include `node` server, `datomspace` server. Node server serve the web, a
 
 ### Middleware
 
+
 ### Controllers
+
 
 ### Smart Contracts
 
+
 ### Frontend
+
 
 ### Dapp
 
