@@ -34,6 +34,7 @@
     "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.4.0",
     "skycons-ts": "^0.2.0",
+    "tsc": "^2.0.4",
     "typescript": "^4.7.4",
     "web-did-resolver": "^2.0.20",
     "web-vitals": "^2.1.2"
