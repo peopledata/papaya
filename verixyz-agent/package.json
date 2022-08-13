@@ -1,0 +1,28 @@
+{
+  "name": "verixyz-agent",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "did:create": "ts-node ./src/create-did",
+    "did:list": "ts-node ./src/list-did"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.1",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "@verixyz/core": "^2.0.0",
+    "@verixyz/credential-w3c": "^2.0.0",
+    "@verixyz/data-store": "^2.0.0",
+    "@verixyz/did-manager": "^2.0.0",
+    "@verixyz/did-provider-ethr": "^2.0.0",
+    "@verixyz/did-provider-web": "^2.0.0",
+    "@verixyz/did-resolver": "^2.0.0",
+    "@verixyz/key-manager": "^2.0.0",
+    "@verixyz/kms-local": "^2.0.0",
+    "ethr-did-resolver": "^6.1.0",
+    "sqlite3": "^5.0.11",
+    "web-did-resolver": "^2.0.20"
+  }
+}

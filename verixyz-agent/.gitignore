@@ -1,0 +1,13 @@
+
+# logs
+package-lock.json
+npm-debug.log*
+logs
+*.log
+
+# dependency directory
+
+node_modules
+data
+public
+!client/public

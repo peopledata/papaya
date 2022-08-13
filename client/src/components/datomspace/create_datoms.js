@@ -37,7 +37,7 @@ async function create_datoms () {
 
   //Append 4 new blocks to the daomspace.
 
-  
+
   
   await datom.append({
       name: 'jerry zhang',
