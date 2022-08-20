@@ -29,10 +29,10 @@ async function append_datoms () {
   //给contact datoms里添加 
 
 await datom.append({
-  name: 'Jesca Mobil',
-  bank: 'MSKD',
-  account: 'YSHJ1022202',
-  balance: '22289221222'
+  name: 'Poual Hkess',
+  bank: 'JSJD',
+  account: 'MMYSSJSHJS02',
+  balance: '89221222'
 })
 
 

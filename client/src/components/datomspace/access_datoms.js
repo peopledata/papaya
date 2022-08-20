@@ -26,6 +26,8 @@ async function access_datoms () {
       valueEncoding: 'json'
   })
   
+
+  const discoveryKey = crypto.discoveryKey(Buffer.from(datom.key)).toString('hex')
   
   console.log('the contact datoms is:')
 
@@ -33,7 +35,7 @@ async function access_datoms () {
  
   console.log('the private key is:', datom.key.toString('hex'))
 
-  console.log('the discovery key is:', crypto.discoveryKey(Buffer.from(datom.key)).toString('hex'))
+  console.log('the discovery key is:', discoveryKey)
 
   //因为有privateKey， 所以可以添加新的data block.
   /*
@@ -52,8 +54,6 @@ async function access_datoms () {
         .on('data', console.log)
         .on('end', console.log.bind(console, '\n(end)'))
 
-  
-  
   
   
 };

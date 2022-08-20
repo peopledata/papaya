@@ -16,10 +16,12 @@ async function start () {
     connection.on('error', err => console.error('2 CONN ERR:', err))
   })
 
-  const key = Buffer.alloc(32).fill(7)
+  const key = Buffer.alloc(32).fill(7) //topic 
 
 
   swarm2.join(key)
+  //console.log('topic is ', key)
+
 
   await swarm2.flush()
   // await discovery.destroy() // Stop lookup up and announcing this topic.
