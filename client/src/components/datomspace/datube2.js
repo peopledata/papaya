@@ -1,19 +1,27 @@
 const DHT = require('@peopledata/datube')
 
-const node = DHT.bootstrapper(49737, '118.195.143.126')
-const key = '9965b3d0ee27e2ed30f71e695198ff3627cb0eac2dbabe4f4667750a2fdc41fe'
+const node = new DHT()
+const key = 'e9e3fff20250a6e147761ae6eed4f7ec62cf16c8384f173f706af9d00028f43e'
+const priKey = Buffer.from(key,'hex')
 
 async function main() {
-  
-// create a server to listen for secure connections
 
-const socket = node.connect(key)
+    
+    // create a server to listen for secure connections
 
-socket.on('open',function() {
- console.log('connected!')
-})
+    const socket = node.connect(key)
 
-//process.stdin.pipe(socket).pipe(process.stdout)
+    socket.on('open',function() {
+    console.log('connected!')
+    }).catch(function() {
+        console.log('Promise Rejected!');
+    })
+
+    process.on('UnhandledRejection',(reason,p) => {
+        console.log('Unhandled Rejection at',p, 'reason:', reason);
+    })
+
+    //process.stdin.pipe(socket).pipe(process.stdout)
 
 
 
