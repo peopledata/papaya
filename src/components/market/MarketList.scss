@@ -1,0 +1,71 @@
+.market-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  .market-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: stretch;
+    background-color: #fff38f;
+    border-radius: 10px;
+    padding: 1rem;
+    width: 100%;
+    cursor: pointer;
+
+    &:not(:first-child) {
+      margin-top: 2rem;
+    }
+    &:nth-child(2n) {
+      background-color: var(--color-primary-light);
+      color: #fff;
+      button {
+        background-color: var(--color-background);
+        color: var(--color-primary);
+      }
+    }
+    .btn-mint {
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    &:hover {
+      opacity: 0.75;
+      .btn-mint {
+        opacity: 1;
+      }
+    }
+  }
+
+  .market-content {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+    margin-right: auto;
+    width: 80%;
+    .market-title {
+      margin-bottom: 0.6rem;
+      font-weight: 800;
+      font-size: 1.7rem;
+    }
+
+    .market-desc {
+      font-size: 1.5rem;
+      font-weight: 400;
+    }
+  }
+
+  .market-logo {
+    background-size: 100%;
+    display: inline-block;
+    vertical-align: middle;
+    object-fit: scale-down;
+    object-position: center center;
+    box-shadow: rgba(0, 0, 0, 0.2) 1px 2px 4px;
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    border-radius: 100%;
+  }
+}
