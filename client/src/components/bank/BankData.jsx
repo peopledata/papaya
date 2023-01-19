@@ -13,7 +13,7 @@ import {
 
 import "./BankData.scss";
 
-const bankContractAddr = "0x44D1349aB7a3c3D24169dda916766b9396c7bb64";
+const bankContractAddr = "0xacDFCD96C81e89db1A4f3f25630d8536ededd7B8"; //PPBT contract address
 // const bankContractAddr = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
 const contractABI = abi.abi;
 
