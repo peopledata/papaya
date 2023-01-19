@@ -17,7 +17,7 @@ router.get("/", (req, res, next) => {
 
 router.get("/create", async (req, res, next) => {
   // 获取管理的 datoms url
-  let datoms_url = getDatomsUrl();
+  let datoms_url = getDatomsUrl(pd_type);
   if (datoms_url) {
     res.send("datoms has exists");
     return;
@@ -66,7 +66,7 @@ router.get("/create", async (req, res, next) => {
 // /fake/datom/get?key=xxxx
 router.get("/get", async (req, res, next) => {
   // 获取管理的 datoms url
-  let datoms_url = getDatomsUrl();
+  let datoms_url = getDatomsUrl(pd_type);
   if (!datoms_url) {
     res.send("datoms is not exists");
     return;
@@ -100,7 +100,7 @@ router.get("/get", async (req, res, next) => {
 
 router.get("/append", async (req, res, next) => {
   // 获取管理的 datoms url
-  let datoms_url = getDatomsUrl();
+  let datoms_url = getDatomsUrl(pd_type);
   if (!datoms_url) {
     res.send("datoms is not exists");
     return;
@@ -117,7 +117,7 @@ router.get("/append", async (req, res, next) => {
     valueEncoding: "json",
   });
 
-  console.log(`Step 1: appned new datom on ${key} \n`);
+  console.log(`Step 1: appned new datom on ${privateKey} \n`);
 
   //1. Append 4 new data to the bank account datoms.
 
@@ -157,7 +157,7 @@ router.get("/append", async (req, res, next) => {
 
 router.get("/read", async (req, res, next) => {
   // get datoms path
-  let datoms_url = getDatomsUrl();
+  let datoms_url = getDatomsUrl(pd_type);
   if (!datoms_url) {
     res.send("datoms is not exists");
     return;
