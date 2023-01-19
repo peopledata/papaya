@@ -1,74 +1,42 @@
 {
-  "name": "webapp",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@mdi/js": "^6.4.95",
-    "@mdi/react": "^1.5.0",
-    "@types/jest": "^27.0.2",
-    "@types/node": "^16.11.6",
-    "@types/react": "^17.0.34",
-    "@types/react-beautiful-dnd": "^13.1.2",
-    "@types/react-dom": "^17.0.11",
-    "@types/react-redux": "^7.1.20",
-    "@types/react-router-dom": "^5.1.7",
-    "@verixyz/core": "^2.0.0",
-    "@verixyz/did-resolver": "^2.0.0",
-    "axios": "^0.24.0",
-    "cids": "^1.1.6",
-    "did-resolver": "^4.0.0",
-    "ethers": "^5.7.2",
-    "ethr-did-resolver": "^6.1.0",
-    "external-svg-loader": "^1.3.4",
-    "getconfig": "^4.5.0",
-    "http-proxy-middleware": "^2.0.1",
-    "ipfs-http-client": "^49.0.4",
-    "it-all": "^2.0.0",
-    "jwt-decode": "^3.1.2",
-    "peopleswarm": "^1.0.0",
-    "react": "^18.2.0",
-    "react-beautiful-dnd": "^13.1.0",
-    "react-dom": "^18.2.0",
-    "react-nice-avatar": "^1.3.1",
-    "react-redux": "^7.2.6",
-    "react-router-dom": "^6.4.4",
-    "react-scripts": "^5.0.1",
-    "redux": "^4.1.2",
-    "redux-devtools-extension": "^2.13.9",
-    "redux-thunk": "^2.4.0",
-    "skycons-ts": "^0.2.0",
-    "tsc": "^2.0.4",
-    "typescript": "^4.7.4",
-    "web-did-resolver": "^2.0.20",
-    "web-vitals": "^2.1.2"
-  },
+  "name": "papaya",
+  "version": "1.0.0",
+  "description": "persoanl data space",
+  "main": "index.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "node server.js",
+    "init-server": "echo Instaling server dependencies && npm install",
+    "init-client": "cd client && echo Instaling client dependencies && npm install",
+    "dev-init": "npm run dir-init && npm run init-server && npm run init-client",
+    "dev-server": "nodemon server.js -e js",
+    "dev-client": "npm start --prefix client",
+    "dev": "concurrently \"npm run dev-server\" \"npm run dev-client\""
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peopledata/papaya.git"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "author": "jerry.zhang <jerry.zhang.bill@gmail.com>",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/peopledata/papaya/issues"
+  },
+  "dependencies": {
+    "concurrently": "^6.3.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.18.1",
+    "ipfs": "^0.63.5",
+    "sequelize": "^6.9.0",
+    "@faker-js/faker": "^7.6.0",
+    "cookie-parser": "~1.4.4",
+    "cors": "^2.8.5",
+    "datom-crypto": "^1.3.0",
+    "datomspace": "^1.4.0",
+    "debug": "~2.6.9",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1"
   },
   "devDependencies": {
-    "prettier": "^2.8.1",
-    "sass": "^1.57.0",
-    "sass-loader": "^13.2.0"
+    "nodemon": "^2.0.14"
   }
 }
