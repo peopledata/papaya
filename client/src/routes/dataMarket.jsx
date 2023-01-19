@@ -6,7 +6,7 @@ const DataMarket = () => {
     data: markets,
     isPending,
     error,
-  } = useFetch("http://localhost:5005/market");
+  } = useFetch(`${process.env.REACT_APP_API_BASE_URL}/market`);
   return (
     <>
       {error && <div>{error}</div>}

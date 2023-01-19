@@ -6,7 +6,7 @@ const DataBank = () => {
     data: banks,
     isPending,
     error,
-  } = useFetch("http://localhost:5005/fake/datom/get");
+  } = useFetch(`${process.env.REACT_APP_API_BASE_URL}/fake/datom/get`);
   return (
     <>
       {error && <div>{error}</div>}

@@ -152,7 +152,7 @@ const BankData = ({ banks }) => {
       const BankNFTContract = getBankNtfContract();
       if (BankNFTContract) {
         // 将用户的个人数据构造成did文档，然后包装成nft
-        fetch("http://localhost:5005/fake/datom/read")
+        fetch(`${process.env.REACT_APP_API_BASE_URL}/fake/datom/read`)
           .then((res) => {
             if (!res.ok) {
               throw Error("could not fetch the data for resources");
