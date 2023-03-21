@@ -1,6 +1,9 @@
 const express = require("express");
+const http = require("http");
 const { faker } = require("@faker-js/faker");
 const bankAbi = require("../data/bank-abi.json");
+const { response } = require("express");
+const axios = require("axios");
 
 const router = express.Router();
 
@@ -8,29 +11,57 @@ const router = express.Router();
 faker.locale = "zh_CN";
 
 router.get("/", (req, res, next) => {
-  const dataMarkets = [
-    {
-      name: faker.company.name(),
-      type: "bank",
-      description: faker.lorem.paragraph(),
-      logo: faker.image.technics(200, 200, true),
-      contract: {
-        address: "0x44D1349aB7a3c3D24169dda916766b9396c7bb64",
-        abi: bankAbi,
-      },
-    },
-    {
-      name: faker.company.name(),
-      type: "bank",
-      description: faker.lorem.paragraph(),
-      logo: faker.image.technics(200, 200, true),
-      contract: {
-        address: "0x44D1349aB7a3c3D24169dda916766b9396c7bb64",
-        abi: bankAbi,
-      },
-    },
-  ];
-  res.json(dataMarkets);
+  axios("https://cluster.peopledata.org.cn/api/v1/demand")
+    .then((response) => {
+      if (
+        response.status === 200 &&
+        response.data &&
+        response.data.code === 1000
+      ) {
+        res.json(response.data.data);
+      } else {
+        res.json({ err: "can't fetch demand markets data!" });
+      }
+    })
+    .catch((err) => next(err));
+});
+
+router.get("/:marketId", (req, res, next) => {
+  axios(
+    `https://cluster.peopledata.org.cn/api/v1/demand/${req.params.marketId}`
+  )
+    .then((response) => {
+      if (
+        response.status === 200 &&
+        response.data &&
+        response.data.code === 1000
+      ) {
+        res.json(response.data.data);
+      } else {
+        res.json({ err: `can't fetch demand ${req.params.marketId} data!` });
+      }
+    })
+    .catch((err) => next(err));
+});
+
+router.get("/:category/contract", (req, res, next) => {
+  axios(
+    `https://cluster.peopledata.org.cn/api/v1/demand/contract/${req.params.category}`
+  )
+    .then((response) => {
+      if (
+        response.status === 200 &&
+        response.data &&
+        response.data.code === 1000
+      ) {
+        res.json(response.data.data);
+      } else {
+        res.json({
+          err: `can't fetch demand category ${req.params.category} contract data!`,
+        });
+      }
+    })
+    .catch((err) => next(err));
 });
 
 module.exports = router;

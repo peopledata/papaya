@@ -1,12 +1,11 @@
 // import { create } from "ipfs-http-client";
 import ipfsClient from "ipfs-http-client";
-import { concat } from "uint8arrays";
-import { toString } from "uint8arrays";
+import { concat, toString } from "uint8arrays";
 import all from "it-all";
 import CID from "cids";
 
-const ipfsApiUrl = "http://localhost:5001";
-const ipfsGatewayUrl = "http://localhost:8080/ipfs";
+const ipfsApiUrl = "http://1.13.193.137:5002";
+const ipfsGatewayUrl = "http://1.13.193.137:8081/ipfs";
 
 const pinningService = {
   name: "Pinata",

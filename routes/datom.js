@@ -163,6 +163,8 @@ router.get("/read", async (req, res, next) => {
     return;
   }
 
+  console.log("datoms url：", datoms_url);
+
   //读datoms name
   const name = await fs.readFile(`${datoms_url}/name`);
   console.log("The datoms name is:", name.toString("utf-8"));
@@ -197,6 +199,7 @@ router.get("/read", async (req, res, next) => {
         console.log(error);
         res.send("error");
       } else {
+        console.log(body);
         res.send(body);
       }
     }

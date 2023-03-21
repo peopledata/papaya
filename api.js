@@ -5,13 +5,13 @@ const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const cors = require("cors");
 
-const indexRouter = require("./routes/index");
+// const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 const helloAPIRouter = require("./routes/hello");
 // const categoryAPIRouter = require("./routes/category");
 const datomAPIRouter = require("./routes/datom");
-
 const marketAPIRouter = require("./routes/market");
+const contractRouter = require("./routes/contract");
 
 const app = express();
 
@@ -26,15 +26,24 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use("/", indexRouter);
+// app.use("/", indexRouter);
+app.use(express.static(path.join(__dirname, "client/dist")));
+
 app.use("/users", usersRouter);
 app.use("/hello", helloAPIRouter);
 
 // 数据市场接口
-app.use("/market", marketAPIRouter);
+app.use("/api/v1/markets", marketAPIRouter);
 
 // fake一个 datom 数据
-app.use("/fake/datom", datomAPIRouter);
+app.use("/api/v1/datom", datomAPIRouter);
+
+app.use("/api/v1/contract", contractRouter);
+
+// Serve the index.html file for all other requests
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname + "/client/dist/index.html"));
+});
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { Outlet, Link } from "react-router-dom";
+import React from "react";
+import { Link } from "umi";
 import Avatar, { genConfig } from "react-nice-avatar";
 import "./Header.scss";
 
