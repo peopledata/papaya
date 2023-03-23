@@ -4,8 +4,8 @@ import { concat, toString } from "uint8arrays";
 import all from "it-all";
 import CID from "cids";
 
-const ipfsApiUrl = "http://1.13.193.137:5002";
-const ipfsGatewayUrl = "http://1.13.193.137:8081/ipfs";
+const ipfsApiUrl = "http://ipfs.peopledata.org.cn:5002";
+const ipfsGatewayUrl = "http://ipfs.peopledata.org.cn:8081/ipfs";
 
 const pinningService = {
   name: "Pinata",

@@ -10,7 +10,7 @@ class MarketDetail extends PureComponent {
   componentDidMount() {
     const { dispatch, location } = this.props;
     const match = pathToRegexp("/market/:id").exec(location.pathname);
-    console.log(match);
+    console.log("1.match=", match);
     if (match) {
       dispatch({ type: "marketDetail/query", payload: { id: match[1] } });
     }
@@ -18,7 +18,8 @@ class MarketDetail extends PureComponent {
   render() {
     const { marketDetail, loading } = this.props;
     const { data } = marketDetail;
-    const isLoading = loading.effects["marketDetail/query"];
+    console.log("marketDetail.data=", data);
+    // const isLoading = loading.effects["marketDetail/query"];
     return (
       <Page inner isLoading>
         <div className={styles.ui}>
@@ -27,10 +28,9 @@ class MarketDetail extends PureComponent {
               <div className={styles.layout__container}>
                 <section className={styles.header__content}>
                   <div className={styles.header__content__logo}>
-                    <img
-                      src="https://bxdc-static.oss-cn-beijing.aliyuncs.com/images/1676898362086.jpg"
-                      alt="华泰证券"
-                    />
+                    {data.demander && (
+                      <img src={data.demander.logo} alt={data.demander.label} />
+                    )}
                   </div>
                   <div className={styles.header__content__description}>
                     <h2>{data.name}</h2>
@@ -39,11 +39,11 @@ class MarketDetail extends PureComponent {
                         Provided By:&nbsp;
                       </span>
                       <a
-                        href="/marketplace/seller-profile?id=1b3bcad1-0703-485b-ba73-e122fce8f979"
+                        href="#"
                         target="_blank"
                         className={styles.providedLink}
                       >
-                        华泰
+                        {data.demander && data.demander.label}
                       </a>
                     </h5>
                     <p>{data.brief}</p>

@@ -8,7 +8,6 @@ const cors = require("cors");
 // const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 const helloAPIRouter = require("./routes/hello");
-// const categoryAPIRouter = require("./routes/category");
 const datomAPIRouter = require("./routes/datom");
 const marketAPIRouter = require("./routes/market");
 const contractRouter = require("./routes/contract");

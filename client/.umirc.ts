@@ -1,7 +1,7 @@
 import { defineConfig } from "umi";
 import { resolve } from "path";
 
-export default defineConfig({
+const config = {
   npmClient: "pnpm",
   devtool: "eval",
   fastRefresh: true,
@@ -12,11 +12,17 @@ export default defineConfig({
   alias: {
     themes: resolve(__dirname, "./src/themes"),
   },
-  // proxy: {
-  //   "/api": {
-  //     target: "http://localhost:5005/",
-  //     changeOrigin: true,
-  //     // pathRewrite: { '^/api': '/api' },
-  //   },
-  // },
-});
+  proxy: {},
+};
+
+if (process.env.NODE_ENV === "development") {
+  config["proxy"] = {
+    "/api": {
+      target: "http://localhost:5005/",
+      changeOrigin: true,
+      // pathRewrite: { '^/api': '/api' },
+    },
+  };
+}
+
+export default defineConfig(config);

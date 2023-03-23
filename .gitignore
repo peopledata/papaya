@@ -35,5 +35,7 @@ logs
 public
 !client/public
 
+client/dist/
+
 #datoms
 datoms

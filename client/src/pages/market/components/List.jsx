@@ -10,16 +10,13 @@ class List extends PureComponent {
     return (
       <div className={styles.marketsWrapper}>
         <div className={styles.marketsContainer}>
-          {datalist &&
+          {datalist ? (
             datalist.map((item, idx) => {
               return (
                 <div key={idx}>
                   <div className={styles.marketItem}>
                     <div className={styles.logo}>
-                      <img
-                        src="https://bxdc-static.oss-cn-beijing.aliyuncs.com/images/1676898362086.jpg"
-                        alt="华泰证券"
-                      />
+                      <img src={item.demander.logo} alt={item.demander.label} />
                     </div>
                     <div className={styles.marketsContent}>
                       <Link
@@ -29,7 +26,7 @@ class List extends PureComponent {
                         {item.name}
                       </Link>
                       <span>
-                        By<small>华泰</small>
+                        By<small>{item.demander.label}</small>
                       </span>
                       <p className={styles.validTime}>
                         有效期 |{" "}
@@ -40,7 +37,10 @@ class List extends PureComponent {
                   </div>
                 </div>
               );
-            })}
+            })
+          ) : (
+            <h3>暂无数据</h3>
+          )}
         </div>
       </div>
     );

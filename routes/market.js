@@ -1,17 +1,11 @@
 const express = require("express");
-const http = require("http");
-const { faker } = require("@faker-js/faker");
-const bankAbi = require("../data/bank-abi.json");
-const { response } = require("express");
 const axios = require("axios");
 
 const router = express.Router();
 
-// 设置为中文
-faker.locale = "zh_CN";
-
 router.get("/", (req, res, next) => {
-  axios("https://cluster.peopledata.org.cn/api/v1/demand")
+  console.log(process.env.MARKETPLACE_URL);
+  axios(`${process.env.MARKETPLACE_URL}/api/v1/demands`)
     .then((response) => {
       if (
         response.status === 200 &&
@@ -27,9 +21,7 @@ router.get("/", (req, res, next) => {
 });
 
 router.get("/:marketId", (req, res, next) => {
-  axios(
-    `https://cluster.peopledata.org.cn/api/v1/demand/${req.params.marketId}`
-  )
+  axios(`${process.env.MARKETPLACE_URL}/api/v1/demands/${req.params.marketId}`)
     .then((response) => {
       if (
         response.status === 200 &&
@@ -46,7 +38,7 @@ router.get("/:marketId", (req, res, next) => {
 
 router.get("/:category/contract", (req, res, next) => {
   axios(
-    `https://cluster.peopledata.org.cn/api/v1/demand/contract/${req.params.category}`
+    `${process.env.MARKETPLACE_URL}/api/v1/demands/contract/${req.params.category}`
   )
     .then((response) => {
       if (

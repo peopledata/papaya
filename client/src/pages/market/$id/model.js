@@ -1,7 +1,5 @@
-import { pathToRegexp } from "path-to-regexp";
 import api from "../../../services";
-import modelExtend from "dva-model-extend";
-import { pageModel } from "../../../utils/models";
+import { pathToRegexp } from "path-to-regexp";
 const { queryMarket } = api;
 
 export default {
@@ -12,14 +10,15 @@ export default {
   },
 
   subscriptions: {
-    // setupHistory({ dispatch, history }) {
-    //   history.listen(({ location }) => {
-    //     const match = pathToRegexp("/market/:id").exec(location.pathname);
-    //     if (match) {
-    //       dispatch({ type: "query", payload: { id: match[1] } });
-    //     }
-    //   });
-    // },
+    setupHistory({ dispatch, history }) {
+      history.listen(({ location }) => {
+        const match = pathToRegexp("/market/:id").exec(location.pathname);
+        console.log("2.match=", match);
+        if (match) {
+          dispatch({ type: "query", payload: { id: match[1] } });
+        }
+      });
+    },
   },
 
   effects: {
